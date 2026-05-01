@@ -1,0 +1,110 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+:root{
+    --bg-color: #0c0c0c;
+    --text-color:#f0f0f0;
+    --fill-color:#fdfdfc;
+    --food-color:rgb(232, 114, 133);
+    /* SPACING */
+    --padding-xs:4px;
+    --padding-sm:8px;
+    --padding-md:16px;
+    --padding-lg:24px;
+    --padding-xl:32px;
+    --padding-2xl:40px;
+    --padding-3xl:48px;
+
+    /* BORDER COLOR */
+    --border-primary-color:#333333;
+
+    /* BORDER RADIUS */
+    --border-radius-xs:4px;
+    --border-radius-sm:8px;
+    --border-radius-md:12px;
+    --border-radius-lg:16px;
+    --border-radius-xl:20px;
+    --border-radius-2xl:24px
+}
+html{
+background-color: var(--bg-color);
+color: var(--text-color);
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main,section{
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    padding: var(--padding-2xl);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: var(--padding-lg);
+}
+section .infos{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info{
+    padding: var(--padding-sm) var(--padding-md);
+    border: 1px solid var(--border-primary-color);
+}
+.board{
+    border: 1px solid var(--border-primary-color);
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(50px,1fr));
+    grid-template-rows: repeat(auto-fill,minmax(50px,1fr));
+}
+.block{
+    /* width: 30px;
+    height: 30px; */
+    border: 1px solid var(--border-primary-color);
+}
+.fill{
+    background-color: var(--fill-color);
+}
+.food{
+    background-color: var(--food-color);
+}
+.modal{
+    height:100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+.modal .start-game,
+.modal .game-over{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--border-radius-2xl);
+}
+.modal .game-over{
+    display: none;
+}
+.btn{
+    padding: var(--padding-xs);
+    border-radius: 5px;
+    font-size: 20px;
+    transition: all 0.3 ease;
+}
+.btn:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
